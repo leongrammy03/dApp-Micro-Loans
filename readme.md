@@ -114,3 +114,57 @@ Contributions are welcome! Please create a pull request or open an issue to disc
 ## License
 
 This project is licensed under the MIT License.
+
+MIT License
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+**Third-Party Packages Used:**
+
+1. **Flask**
+   - License: BSD-3-Clause
+   - URL: https://palletsprojects.com/p/flask/
+
+2. **Flask-CORS**
+   - License: MIT
+   - URL: https://github.com/corydolphin/flask-cors
+
+3. **scikit-learn**
+   - License: BSD-3-Clause
+   - URL: https://scikit-learn.org/stable/about.html#license
+
+4. **React**
+   - License: MIT
+   - URL: https://reactjs.org/
+
+5. **axios**
+   - License: MIT
+   - URL: https://github.com/axios/axios
+
+6. **Web3.js**
+   - License: MIT
+   - URL: https://github.com/ChainSafe/web3.js
+
+**Dataset Used:**
+
+- **Credit Risk Dataset**
+  - Source: Kaggle
+  - URL: https://www.kaggle.com/datasets/laotse/credit-risk-dataset
