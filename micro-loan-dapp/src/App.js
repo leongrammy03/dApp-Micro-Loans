@@ -39,16 +39,16 @@ import axios from 'axios';
 
 // Define options for encoded variables
 const homeOwnershipOptions = [
-  { value: 0, label: 'RENT' },
-  { value: 1, label: 'OWN' },
-  { value: 2, label: 'MORTGAGE' }
+  { value: 0, label: 'Rent' },
+  { value: 1, label: 'Own' },
+  { value: 2, label: 'Mortgage' }
 ];
 
 const loanIntentOptions = [
-  { value: 0, label: 'PERSONAL' },
-  { value: 1, label: 'EDUCATION' },
-  { value: 2, label: 'MEDICAL' },
-  { value: 3, label: 'VENTURE' }
+  { value: 0, label: 'Personal' },
+  { value: 1, label: 'Education' },
+  { value: 2, label: 'Medical' },
+  { value: 3, label: 'Venture' }
 ];
 
 function App() {
