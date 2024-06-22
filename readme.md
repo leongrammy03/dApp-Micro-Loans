@@ -51,7 +51,7 @@ This project is a decentralized application (dApp) for micro loans. It allows us
     truffle migrate --reset
     ```
 
-5. Start the Flask server:
+5. Move Smart Contact into right directory:
 
     ```sh
     cp build/contracts/LoanContract.json micro-loan-dapp/src/contracts/
@@ -65,15 +65,7 @@ This project is a decentralized application (dApp) for micro loans. It allows us
     flask run 
     ```
 
-7. Start the Flask server:
-
-    ```sh
-    cd flash-backend
-    source venv/bin/activate
-    flask run 
-    ```
-
-8. Start the React frontend:
+7. Start the React frontend:
 
     ```sh
     npm start
