@@ -48,17 +48,32 @@ This project is a decentralized application (dApp) for micro loans. It allows us
 
     ```sh
     truffle migrate
+    truffle migrate --reset
     ```
 
 5. Start the Flask server:
 
     ```sh
-    cd flash-backend
-    source venv/bin/activate
-    python app.py
+    cp build/contracts/LoanContract.json micro-loan-dapp/src/contracts/
     ```
 
-6. Start the React frontend:
+6. Start the Flask server:
+
+    ```sh
+    cd flash-backend
+    source venv/bin/activate
+    flask run 
+    ```
+
+7. Start the Flask server:
+
+    ```sh
+    cd flash-backend
+    source venv/bin/activate
+    flask run 
+    ```
+
+8. Start the React frontend:
 
     ```sh
     npm start
