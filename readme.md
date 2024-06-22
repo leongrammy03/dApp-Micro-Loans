@@ -1,148 +1,116 @@
 # dApp Micro Loans
 
-This repository contains a decentralized application (dApp) for managing microloans on the Ethereum blockchain. The application allows users to request, fund, and repay loans, with each loan associated with a risk score determined by a machine learning model.
+## Overview
 
-## Project Structure
+This project is a decentralized application (dApp) for micro loans. It allows users to request and fund loans using a blockchain-based smart contract. The risk score of each loan is calculated using a machine learning model trained on a public dataset.
 
-- `app.py`: Flask application that serves the machine learning model for risk score prediction.
-- `train_model.py`: Script to train and save the machine learning model.
-- `LoanContract.sol`: Solidity smart contract for managing loans on the Ethereum blockchain.
-- `src/App.js`: React front-end application for interacting with the smart contract and Flask backend.
-- `README.md`: This documentation file.
+## Features
 
-## Setup and Installation
+- Users can request loans by providing details such as loan amount, interest rate, duration, and personal information.
+- Loans can be funded by other users.
+- Risk scores are calculated for each loan request to help lenders make informed decisions.
+- Risk scores are displayed as a visual bar in the UI.
 
-### Prerequisites
+## Technologies Used
 
-- Python 3.x
-- Node.js and npm
-- Ganache (for local Ethereum blockchain)
-- MetaMask (for interacting with the dApp)
-- Flask
-- Joblib
-- Pandas
-- NumPy
-- Scikit-learn
-- Web3.js
+- **Frontend**: React, Material-UI
+- **Backend**: Flask, Flask-CORS
+- **Blockchain**: Web3.js, Solidity, Ganache
+- **Machine Learning**: Scikit-learn
+- **Public Dataset**: [Kaggle Credit Risk Dataset](https://www.kaggle.com/datasets/laotse/credit-risk-dataset)
 
-### Backend Setup
+## Installation
 
-1. **Clone the repository:**
+1. Clone the repository:
 
-    ```bash
-    git clone https://github.com/your-repo/dapp-micro-loans.git
+    ```sh
+    git clone https://github.com/yourusername/dapp-micro-loans.git
     cd dapp-micro-loans
     ```
 
-2. **Set up a Python virtual environment:**
+2. Install the required dependencies:
 
-    ```bash
+    ```sh
+    npm install
+    cd flash-backend
     python -m venv venv
-    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-    ```
-
-3. **Install Python dependencies:**
-
-    ```bash
+    source venv/bin/activate
     pip install -r requirements.txt
     ```
 
-4. **Train the machine learning model:**
+3. Start the Ganache blockchain:
 
-    ```bash
-    python train_model.py
+    ```sh
+    ganache-cli
     ```
 
-5. **Run the Flask application:**
+4. Deploy the smart contract:
 
-    ```bash
+    ```sh
+    truffle migrate
+    ```
+
+5. Start the Flask server:
+
+    ```sh
+    cd flash-backend
+    source venv/bin/activate
     python app.py
     ```
 
-### Smart Contract Deployment
+6. Start the React frontend:
 
-1. **Start Ganache:**
-
-    Open Ganache and create a new workspace.
-
-2. **Compile and deploy the smart contract:**
-
-    ```bash
-    cd truffle
-    truffle compile
-    truffle migrate --network development
-    ```
-
-3. **Copy the deployed contract's address and update `src/contracts/LoanContract.json` with the new address.**
-
-### Frontend Setup
-
-1. **Navigate to the `src` directory:**
-
-    ```bash
-    cd src
-    ```
-
-2. **Install Node.js dependencies:**
-
-    ```bash
-    npm install
-    ```
-
-3. **Start the React application:**
-
-    ```bash
+    ```sh
     npm start
     ```
 
-4. **Open your browser and navigate to `http://localhost:3000`.**
+## Dataset
+
+The machine learning model was trained using a public dataset from Kaggle. You can find the dataset [here](https://www.kaggle.com/datasets/laotse/credit-risk-dataset).
+
+## Machine Learning Model
+
+The `RandomForestClassifier` from the Scikit-learn library was used to train the risk assessment model. The model predicts the probability of loan default based on several input features.
+
+### Training the Model
+
+1. Download the dataset from Kaggle and place it in the `flash-backend` directory.
+2. Run the training script to train the model:
+
+    ```sh
+    cd flash-backend
+    source venv/bin/activate
+    python train_model.py
+    ```
+
+This script will:
+- Load and preprocess the dataset.
+- Encode categorical variables.
+- Train a `RandomForestClassifier`.
+- Save the trained model and encoders as `.pkl` files.
 
 ## Usage
 
 ### Request a Loan
 
-1. **Log in to the application using your MetaMask account.**
-2. **Fill out the loan request form with the necessary details.**
-3. **Click on "Request Loan" to submit your loan request.**
-4. **The loan will be processed and a risk score will be calculated and displayed.**
+1. Log in to the application.
+2. Fill in the loan request form with the required details.
+3. Submit the request to create a loan.
 
 ### Fund a Loan
 
-1. **Log in to the application using your MetaMask account.**
-2. **Navigate to the "Current Available Loans" section.**
-3. **Click on "Fund Loan" next to the loan you wish to fund.**
+1. Browse the list of available loans.
+2. Select a loan to fund and click the "Fund Loan" button.
 
 ### Repay a Loan
 
-1. **Log in to the application using your MetaMask account.**
-2. **Navigate to the "Outstanding Loans" section.**
-3. **Click on "Repay Loan" next to the loan you wish to repay.**
-
-## Changes Made
-
-### Backend (Flask)
-
-- Added a new Flask route to handle risk score predictions.
-- Updated the `app.py` to load and use the pre-trained model for predicting risk scores.
-- Added proper data handling and conversion for incoming requests.
-
-### Frontend (React)
-
-- Updated `App.js` to include the risk score in the loan request process.
-- Modified the loan display tables to include a new column for displaying risk scores.
-- Implemented a visual representation of the risk score using a color-coded bar.
-- Ensured proper type conversions for data types, particularly handling BigInt values.
-
-### Smart Contract
-
-- Modified the `LoanContract.sol` to include a `riskScore` field in the `Loan` struct.
-- Updated the `createLoan` function to accept and store the risk score.
-- Deployed the updated contract and updated the front-end contract address reference.
+1. Browse the list of your outstanding loans.
+2. Select a loan to repay and click the "Repay Loan" button.
 
 ## Contributing
 
-If you wish to contribute to this project, please fork the repository and submit a pull request with your changes.
+Contributions are welcome! Please create a pull request or open an issue to discuss your changes.
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for more details.
+This project is licensed under the MIT License.
