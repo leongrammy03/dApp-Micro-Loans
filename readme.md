@@ -19,57 +19,82 @@ This project is a decentralized application (dApp) for micro loans. It allows us
 - **Machine Learning**: Scikit-learn
 - **Public Dataset**: [Kaggle Credit Risk Dataset](https://www.kaggle.com/datasets/laotse/credit-risk-dataset)
 
-## Installation
+## Setup Instructions
 
-1. Clone the repository:
+### Prerequisites
 
-    ```sh
-    git clone https://github.com/yourusername/dapp-micro-loans.git
-    cd dapp-micro-loans
+- Node.js and npm 
+- Python and pip
+- Ganache CLI (for local Ethereum blockchain)
+
+### Installation Steps
+
+
+1. **Install Node (if not installed)**:
+
+    ```bash
+    brew install node
+     ```
+
+2. **Clone the repository**:
+
+    ```bash
+    git clone https://github.com/your-username/micro-loan-dapp.git
+    cd micro-loan-dapp
     ```
 
-2. Install the required dependencies:
+3. **Install backend dependencies**:
 
-    ```sh
-    npm install
+    ```bash
     cd flash-backend
     python -m venv venv
-    source venv/bin/activate
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
     pip install -r requirements.txt
     ```
 
-3. Start the Ganache blockchain:
+4. **Install frontend dependencies**:
 
-    ```sh
+    ```bash
+    cd ../micro-loan-dapp
+    npm install
+    ```
+
+5. **Install Ganache CLI**:
+
+    ```bash
+    npm install -g ganache-cli
+    ```
+
+6. **Start Ganache CLI**:
+
+    ```bash
     ganache-cli
     ```
 
-4. Deploy the smart contract:
+7. **Deploy Smart Contract**:
 
-    ```sh
+    ```bash
     truffle migrate
-    truffle migrate --reset
     ```
+### Running the Application
 
-5. Move Smart Contact into right directory:
+1. **Start the backend server**:
 
-    ```sh
-    cp build/contracts/LoanContract.json micro-loan-dapp/src/contracts/
-    ```
-
-6. Start the Flask server:
-
-    ```sh
+    ```bash
     cd flash-backend
     source venv/bin/activate
-    flask run 
+    flask run
     ```
 
-7. Start the React frontend:
+2. **Start the frontend development server**:
 
-    ```sh
+    ```bash
+    cd ../micro-loan-dapp
     npm start
     ```
+
+3. **Interact with the application**:
+    - Open your web browser and navigate to `http://localhost:3000`.
 
 ## Dataset
 
